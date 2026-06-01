@@ -573,3 +573,92 @@ body{
 .about__skill-item:hover img {
 	animation: wiggle 0.3s ease-in-out infinite;
 }
+
+/* ===== HAMBURGER ===== */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.navbar__hamburger span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--color-text);
+  transition: var(--transition);
+}
+
+/* Tabel */
+@media (max-width:768px){
+	.hero__title {
+		font-size: 2.5rem;
+	}
+
+	.about__content {
+		flex-direction: column;
+	}
+
+	.projects__grid {
+		grid-template-columns: 1fr;
+	}
+	.contact__links {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar__links {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-bg);
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .navbar__links.open {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__description {
+    font-size: var(--font-size-sm);
+  }
+
+  .navbar__links {
+    gap: var(--spacing-md);
+  }
+
+}
+
+/* Hamburger active holati */
+.navbar__hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar__hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}

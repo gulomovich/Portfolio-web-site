@@ -53,3 +53,20 @@ window.addEventListener('load', () => {
 		observer.observe(section);
 	})
 })
+
+// ===== HAMBURGER MENU =====
+const hamburger = document.getElementById('hamburger');
+const navbarLinks = document.getElementById('navbar-links');
+
+hamburger.addEventListener('click', () => {
+  navbarLinks.classList.toggle('open');
+  hamburger.classList.toggle('active');
+});
+
+// Link bosilganda menu yopilsin
+navbarLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navbarLinks.classList.remove('open');
+    hamburger.classList.remove('active');
+  });
+});
